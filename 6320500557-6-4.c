@@ -21,11 +21,10 @@ int main()
         {
            if(x[i] == x[i+1])
            {
-               m++;
+               printf("%d",x[i]);
            }
         }
     }
-    printf("%d",m);
 
     return 0;
 }
