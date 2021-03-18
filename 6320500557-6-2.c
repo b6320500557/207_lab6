@@ -20,7 +20,10 @@ int main()
        if(k[i] == p[i])
         {
              l++;
-             j = i;
+        }
+        if(k[i] != p[i])
+        {
+             j++;
         }
     }
     printf("%d %d",l,j);
