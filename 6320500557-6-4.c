@@ -3,7 +3,11 @@ int main()
 {
     int n;
     scanf("%d",&n);
-    int i,j,x[n][2];
+    int i,j,x[n][2],k[n],m=0,l=0;
+     for(i=1; i<=n; i++)
+    {
+        k[i] = 0;
+    }
     for(i=1; i<=n; i++)
     {
         for(j=1; j<=2; j++)
@@ -15,10 +19,13 @@ int main()
     {
         for(j=1; j<=2; j++)
         {
-            printf("%d ",x[i][j]);
+           if(x[i] == x[i+1])
+           {
+               m++;
+           }
         }
-        printf("\n");
-
     }
+    printf("%d",m);
+
     return 0;
 }
