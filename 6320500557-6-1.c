@@ -8,18 +8,15 @@ int main()
     char x[n][1001];
     for(i=0; i<n; i++)
     {
-        for(j=0; j<1000; j++)
-        {
-            scanf("%s",x[i][j]);
-        }
-
+        scanf("%s",x[i]);
     }
     for(i=0; i<n; i++)
     {
-          for(j=0; j<1000; j++)
+          for(j=i; j<strlen(x[i]); j++)
         {
-            printf("%s ",x[i][j]);
+            printf("%c",x[i][j]);
         }
+        printf("\n");
     }
     return 0;
 }
