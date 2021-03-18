@@ -4,29 +4,28 @@ int main()
 {
     int n;
     scanf("%d",&n);
-    int i,j;
+    int i,j,temp[1000];
     char x[n][1001],m=0,k[n];
     for(i=0; i<n; i++)
     {
         scanf("%s",x[i]);
     }
-    for(i=0; i<n; i++)
+    for(i=0; i<n-1; i++)
     {
-        if(x[i] > x[i+1])
+        for(j=0; j<n-i-1; j++)
         {
-            strcpy (k[i],x[i]);
+            if(strcmp(x[j], x[j + 1]) == 1)
+            {
+                strcpy(temp, x[j]);
+                strcpy(x[j], x[j + 1]);
+                strcpy(x[j + 1], temp);
+            }
         }
-        else
-        {
-            strcpy (k[i],x[i+1]);
-        }
+
     }
     for(i=0; i<n; i++)
     {
-       printf("%s",k[i]);
-        printf("\n");
+        printf("%s\n", x[i]);
     }
-
-
     return 0;
 }
