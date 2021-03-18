@@ -5,18 +5,28 @@ int main()
     int n;
     scanf("%d",&n);
     int i,j;
-    char x[n][1001];
+    char x[n][1001],m=0,k[n];
     for(i=0; i<n; i++)
     {
         scanf("%s",x[i]);
     }
     for(i=0; i<n; i++)
     {
-          for(j=i; j<strlen(x[i]); j++)
+        if(x[i] > x[i+1])
         {
-            printf("%c",x[i][j]);
+            strcpy (k[i],x[i]);
         }
+        else
+        {
+            strcpy (k[i],x[i+1]);
+        }
+    }
+    for(i=0; i<n; i++)
+    {
+       printf("%s",k[i]);
         printf("\n");
     }
+
+
     return 0;
 }
